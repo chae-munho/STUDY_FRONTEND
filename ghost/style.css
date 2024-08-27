@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /*수평 방향으로 중앙*/
+    align-items: center; /*수직 방향으로 중앙*/
+    background-color: #000;
+}
+.ghost .body {
+    width: 120px;
+    height: 160px;
+    background-color: #fff;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+    position: relative;
+}
+.ghost .body .face {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform : translateX(-50%);
+    flex-wrap: wrap; /*눈을 가운데로 정렬하려고 했더니 약간 왼쪽으로 치우쳐짐 그 이유는 그 밑의 마우스까지 정렬하려 하니까 그렇게 됨 그래서 눈 영역을 넘어가면 줄바꿈을 하는 기능이 필요한데 그게 wrap이다.*/
+    
+}
+.ghost .body .face .eye {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #333;
+}
+.ghost .body .face  .mouse {
+    width: 33px;
+    height: 15px;
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 18px;
+    margin-top: 13px;
+}
+
+.ghost .bottom {
+    display: flex;
+}
+.ghost .bottom .leg {
+    background-color: #fff;
+    width: 24px;
+    height: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.ghost .bottom .leg:nth-child(2n) {
+    background-color: #000;
+    position: relative;
+    top: -6px;
+    border-radius: 50%;
+}
+.ghost {
+    animation: moveUpDown 3s infinite;
+    position: absolute; /*마우스를 따라다니게 하기 위해서 그럼 마우스가 릴레티브라는 의미인것 같아*/
+}
+@keyframes moveUpDown {
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        margin-top: -50px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
