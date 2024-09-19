@@ -2,10 +2,33 @@
     margin: 0;
     padding: 0;
 }
+:root {
+   --primary-color: #edf2fc;
+   --secondary-color: #212121;
+    
+}
+.dark-theme {
+    --primary-color: #000106;
+    --secondary-color: #fff;
+
+}
+/*moon 아이콘 추가*/
+#icon {
+    width: 30px;
+    cursor: pointer;
+}
+nav ul {
+    flex: 1;
+    text-align: right;
+   
+
+}
+/*moon 아이콘 추가*/
+
 .hero {
     height: 100vh;
     width: 100%;
-    background: #edf2fc;
+    background: var(--primary-color);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
 
@@ -31,7 +54,8 @@ nav ul li {
 }
 nav ul li a {
     text-decoration: none;
-    color: #606163;
+    color: var(--secondary-color);
+
 }
 nav ul li a:hover {
     color: #ff4321;
@@ -43,7 +67,7 @@ nav ul li a:hover {
 }
 .info h1 {
     font-size: 70px;
-    color: #212121;
+    color: var(--secondary-color);
     margin-bottom: 20px;
 
 }
@@ -51,14 +75,14 @@ span {
     color: red;
 }
 .info p {
-    color: #606163;
+    color: var(--secondary-color);
     line-height: 22px;  /*기본이 20px이다.*/
 }
 .info a {
-    background: #212121;
+    background: var(--secondary-color);
     padding: 10px 18px;
     text-decoration: none;
-    color: #fff;
+    color: var(--primary-color);
     display: inline-block;
     margin: 30px 0;
     border-radius: 5px;
@@ -90,7 +114,7 @@ span {
 }
 .social-links a {
     font-size: 30px;
-    color: #606163;
+    color: var(--secondary-color);
     margin-right: 20px;
 }
 .social-links a:hover {
